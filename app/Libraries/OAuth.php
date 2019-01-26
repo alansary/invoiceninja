@@ -32,11 +32,11 @@ class OAuth
         /** 1. Ensure user arrives on the correct provider **/
 
         $query = [
-            'oauth_user_id' =>$user->getId()) 
+            'oauth_user_id' =>$user->getId(),
             'oauth_provider_id'=>$provider
         ];
 
-        if($user = MultiDB::hasUser($query)
+        if($user = MultiDB::hasUser($query))
         {
             return $user;
         }
